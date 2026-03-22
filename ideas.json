@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": "cat-mn1l7w72c8909",
-      "name": "New Category",
+      "name": "Character",
       "status": "",
       "x": 610,
       "y": 338,
@@ -27,8 +27,7 @@
     "subtitle": "A space for creative thoughts",
     "githubRepo": "https://github.com/vadigr123/ideas-board",
     "showMinimap": true,
-    "gridDots": true,
-    "githubToken": "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"
+    "gridDots": true
   },
   "notes": []
 }

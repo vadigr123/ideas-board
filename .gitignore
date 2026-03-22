@@ -1,0 +1,8 @@
+.admin-token
+data/.admin-token
+node_modules/
+admin/
+public/
+*.bat
+package*.json
+server.js
