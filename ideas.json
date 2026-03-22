@@ -29,5 +29,15 @@
     "showMinimap": true,
     "gridDots": true
   },
-  "notes": []
+  "notes": [
+    {
+      "id": "note-mn1lisj3s482z",
+      "title": "Testing",
+      "content": "New note",
+      "color": "purple",
+      "x": 615,
+      "y": 212,
+      "width": 240
+    }
+  ]
 }

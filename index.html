@@ -179,6 +179,33 @@ select.sinput{cursor:pointer}
   display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s}
 .sub-close:hover{color:var(--red);border-color:var(--red)}
 
+/* REFERENCE BUTTONS */
+.refs-row{display:flex;flex-wrap:wrap;gap:8px;padding:0 12px 10px}
+.ref-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:10px;
+  font-family:var(--mono);font-size:11px;font-weight:600;text-decoration:none;
+  transition:all .18s;white-space:nowrap;border:2px solid transparent}
+.ref-btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.ref-btn.red{background:rgba(233,69,96,.15);color:#e94560;border-color:rgba(233,69,96,.4)}
+.ref-btn.blue{background:rgba(59,130,246,.15);color:#60a5fa;border-color:rgba(59,130,246,.4)}
+.ref-btn.green{background:rgba(34,197,94,.15);color:#4ade80;border-color:rgba(34,197,94,.4)}
+.ref-btn.yellow{background:rgba(234,179,8,.15);color:#facc15;border-color:rgba(234,179,8,.4)}
+.ref-btn.purple{background:rgba(168,85,247,.15);color:#c084fc;border-color:rgba(168,85,247,.4)}
+.ref-btn.gray{background:rgba(148,163,184,.1);color:#94a3b8;border-color:rgba(148,163,184,.3)}
+.ref-btn svg{width:12px;height:12px;flex-shrink:0}
+/* modal ref buttons */
+.mref-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.mref-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:12px;
+  font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;
+  transition:all .2s;white-space:nowrap;border:2px solid transparent}
+.mref-btn:hover{transform:translateY(-2px);filter:brightness(1.2)}
+.mref-btn.red{background:rgba(233,69,96,.15);color:#e94560;border-color:rgba(233,69,96,.4)}
+.mref-btn.blue{background:rgba(59,130,246,.15);color:#60a5fa;border-color:rgba(59,130,246,.4)}
+.mref-btn.green{background:rgba(34,197,94,.15);color:#4ade80;border-color:rgba(34,197,94,.4)}
+.mref-btn.yellow{background:rgba(234,179,8,.15);color:#facc15;border-color:rgba(234,179,8,.4)}
+.mref-btn.purple{background:rgba(168,85,247,.15);color:#c084fc;border-color:rgba(168,85,247,.4)}
+.mref-btn.gray{background:rgba(148,163,184,.1);color:#94a3b8;border-color:rgba(148,163,184,.3)}
+.mref-btn svg{width:14px;height:14px;flex-shrink:0}
+
 /* LOADING */
 #loading{position:fixed;inset:0;z-index:400;background:var(--bg);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
@@ -242,6 +269,10 @@ select.sinput{cursor:pointer}
       <div id="m-links-wrap" style="display:none">
         <div class="mlinks-title">Links</div>
         <div class="mlinks" id="m-li"></div>
+      </div>
+      <div id="m-refs-wrap" style="display:none">
+        <div class="mlinks-title">References</div>
+        <div class="mref-row" id="m-refs"></div>
       </div>
       <div class="mcat" id="m-ca"></div>
     </div>
@@ -350,6 +381,14 @@ function resolveImg(url){
   return base+'/'+clean;
 }
 
+function buildRefButtons(refs, cls){
+  if(!refs||!refs.length)return'';
+  return refs.filter(function(r){return r&&r.url;}).map(function(r){
+    return'<a class="'+cls+' '+(r.color||'gray')+'" href="'+esc(r.url)+'" target="_blank" rel="noopener">'+
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'+esc(r.label||r.url)+'</a>';
+  }).join('');
+}
+
 function render(data){
   world.innerHTML='';
   var pub=0;
@@ -375,8 +414,9 @@ function render(data){
         }
         var tags=(idea.tags||[]).map(function(t){return'<span class="itag">'+esc(t)+'</span>';}).join('');
         var links=(idea.links||[]).slice(0,2).map(function(l){return'<span class="ilinkpill">'+esc(l.label||l.url)+'</span>';}).join('');
-        c.innerHTML=collageHtml+'<div class="iinfo"><div class="ititle">'+esc(idea.title)+'</div><div class="idesc">'+esc(idea.description||'')+'</div>'+(tags?'<div class="itags">'+tags+'</div>':'')+'</div>'+(links?'<div class="ilinks">'+links+'</div>':'');
-        c.onclick=function(e){if(!e.target.closest('.ilinkpill'))openMod(idea,cat);};
+        var refs=buildRefButtons(idea.refs,'ref-btn');
+        c.innerHTML=collageHtml+'<div class="iinfo"><div class="ititle">'+esc(idea.title)+'</div><div class="idesc">'+esc(idea.description||'')+'</div>'+(tags?'<div class="itags">'+tags+'</div>':'')+'</div>'+(links?'<div class="ilinks">'+links+'</div>':'')+(refs?'<div class="refs-row">'+refs+'</div>':'');
+        c.onclick=function(e){if(!e.target.closest('.ilinkpill,.ref-btn'))openMod(idea,cat);};
         body.appendChild(c);
       });
     }
@@ -403,10 +443,16 @@ function render(data){
   document.title=(data.settings&&data.settings.title)||'Ideas Board';
 
   // Parse GitHub config for submissions
-  var repo=(data.settings&&data.settings.githubRepo)||'';
-  var token=(data.settings&&data.settings.githubToken)||'';
-  var m=repo.match(/github\.com\/([^/]+)\/([^/]+)/);
-  if(m&&token){ghConfig={owner:m[1],repo:m[2].replace(/\.git$/,''),token:token};}
+  // submissionsToken is a SAFE issues-only token stored in ideas.json (not the push token)
+  var repoUrl=(data.settings&&data.settings.githubRepo)||'';
+  var token=(data.settings&&data.settings.submissionsToken)||'';
+  var owner='', repoName='';
+  // Accept: https://github.com/user/repo OR https://user.github.io/repo
+  var m1=repoUrl.match(/github\.com\/([^/]+)\/([^/\s.]+)/);
+  var m2=repoUrl.match(/([^/.\s]+)\.github\.io\/([^/\s]+)/);
+  if(m1){owner=m1[1];repoName=m1[2].replace(/\.git$/,'');}
+  else if(m2){owner=m2[1];repoName=m2[2].replace(/\.git$/,'');}
+  if(owner&&repoName&&token){ghConfig={owner:owner,repo:repoName,token:token};}
   else{ghConfig=null;}
 
   // Populate submit form categories
@@ -451,6 +497,11 @@ function openMod(idea,cat){
       return'<a class="mlinkbtn" href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label||l.url)+'</a>';
     }).join('');
   } else {wrap.style.display='none';}
+  // Reference buttons
+  var mrefWrap=document.getElementById('m-refs-wrap');
+  var refsHtml=buildRefButtons(idea.refs,'mref-btn');
+  if(refsHtml){mrefWrap.style.display='';document.getElementById('m-refs').innerHTML=refsHtml;}
+  else{mrefWrap.style.display='none';}
   document.getElementById('m-ca').textContent='Category: '+cat.name;
   document.getElementById('modal-bg').classList.add('open');
 }
@@ -466,12 +517,12 @@ function openSubmit(){
   document.getElementById('sub-title').value='';
   document.getElementById('sub-desc').value='';
   document.getElementById('sub-contact').value='';
-  document.getElementById('sub-submit-btn').disabled=false;
-  document.getElementById('sub-note').textContent='Your submission will be reviewed before it appears on the board.';
-  if(!ghConfig){
-    document.getElementById('sub-note').textContent='Submissions are not configured yet. Ask the board admin to set up the GitHub token.';
-    document.getElementById('sub-submit-btn').disabled=true;
-  }
+  var repo=(S.data&&S.data.settings&&S.data.settings.githubRepo)||'';
+  var hasRepo=/github\.com\/[^/]+\/[^/]+/.test(repo);
+  document.getElementById('sub-submit-btn').disabled=!hasRepo;
+  document.getElementById('sub-note').textContent=hasRepo
+    ?'Clicking Submit will open GitHub to complete your submission (free account required).'
+    :'GitHub repo not configured. Contact the board admin.';
   document.getElementById('sub-bg').classList.add('open');
 }
 function closeSubmit(e){
@@ -479,36 +530,28 @@ function closeSubmit(e){
   document.getElementById('sub-bg').classList.remove('open');
 }
 function submitIdea(){
-  if(!ghConfig)return;
   var catId=document.getElementById('sub-cat').value;
   var title=document.getElementById('sub-title').value.trim();
   var desc=document.getElementById('sub-desc').value.trim();
   var contact=document.getElementById('sub-contact').value.trim();
   if(!title){document.getElementById('sub-title').focus();return;}
-  var btn=document.getElementById('sub-submit-btn');
-  btn.disabled=true;btn.textContent='Submitting...';
+  var repo=(S.data&&S.data.settings&&S.data.settings.githubRepo)||'';
+  var m=repo.match(/github\.com\/([^/]+)\/([^/]+)/);
+  if(!m){document.getElementById('sub-note').textContent='Repo not configured.';return;}
+  var owner=m[1],repoName=m[2].replace(/\.git$/,'');
   var catName='';
   if(S.data)S.data.categories.forEach(function(c){if(c.id===catId)catName=c.name;});
-  var body='**Category:** '+(catName||'(not specified)')+'\n\n**Description:**\n'+(desc||'(no description)')+'\n\n'+(contact?'**Contact:** '+contact:'');
-  var payload={title:'[Idea] '+title,body:body,labels:['user-idea']};
-  fetch('https://api.github.com/repos/'+ghConfig.owner+'/'+ghConfig.repo+'/issues',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Authorization':'Bearer '+ghConfig.token,'Accept':'application/vnd.github+json','User-Agent':'ideas-board'},
-    body:JSON.stringify(payload)
-  }).then(function(r){return r.json();}).then(function(d){
-    if(d.number){
-      document.getElementById('sub-form-wrap').style.display='none';
-      document.getElementById('sub-success').style.display='block';
-    } else {
-      btn.disabled=false;btn.textContent='Submit Idea';
-      document.getElementById('sub-note').textContent='Error: '+(d.message||'Submission failed. Try again.');
-    }
-  }).catch(function(e){
-    btn.disabled=false;btn.textContent='Submit Idea';
-    document.getElementById('sub-note').textContent='Network error. Please try again.';
-  });
+  var body=['**Category:** '+(catName||'Not specified'),'','**Description:**',desc||'(none)'];
+  if(contact)body.push('','**Contact:** '+contact);
+  var url='https://github.com/'+owner+'/'+repoName+'/issues/new'
+    +'?title='+encodeURIComponent('[Idea] '+title)
+    +'&body='+encodeURIComponent(body.join('\n'))
+    +'&labels='+encodeURIComponent('user-idea');
+  window.open(url,'_blank','noopener');
+  document.getElementById('sub-form-wrap').style.display='none';
+  document.getElementById('sub-success').style.display='block';
+  document.getElementById('sub-success').innerHTML='<div class="sub-success-ico">&#8599;</div><div class="sub-success-txt">GitHub opened in a new tab.<br><span style=\"font-size:11px;opacity:.7\">Sign in and click \"Submit new issue\" to complete.</span></div>';
 }
-
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
     document.getElementById('modal-bg').classList.remove('open');
