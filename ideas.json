@@ -4,20 +4,209 @@
       "id": "cat-mn1l7w72c8909",
       "name": "Character",
       "status": "",
-      "x": 610,
-      "y": 338,
+      "x": 562,
+      "y": 336,
       "color": "#16213e",
       "ideas": [
         {
           "id": "idea-mn1l80iyz0ym5",
-          "title": "Poyo",
+          "title": "Poyo [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Done",
+            "Testing"
+          ],
+          "images": [
+            "uploads/photo_2026-03-10_10-14-41 (3).jpg"
+          ],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n4cw0hfz2o",
+          "title": "Xiomi mascot [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Done",
+            "Testing"
+          ],
+          "images": [
+            "uploads/photo_2026-03-06_12-24-58.jpg"
+          ],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n4us2xvp3b",
+          "title": "Android mascot [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Done",
+            "Testing"
+          ],
+          "images": [
+            "uploads/photo_2026-03-06_13-07-28.jpg"
+          ],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n5ldev40c0",
+          "title": "Roblox Duo [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Done",
+            "Testing"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n66laggu3u",
+          "title": "White Dalmatian [IL / Upgrade]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "cat-mn1mykw9uiw4a",
+      "name": "Style",
+      "status": "",
+      "x": 207,
+      "y": 333,
+      "color": "#16213e",
+      "ideas": [
+        {
+          "id": "idea-mn1myw0bjrwc1",
+          "title": "Fursuit [Z-image]",
           "description": "",
           "visibility": "public",
           "tags": [
             "Done"
           ],
           "images": [],
-          "links": []
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1mzojme8t71",
+          "title": "Chibi [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Done"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n07t38pto3",
+          "title": "Milkytiger [Il / Upgrade]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n1au75nu3u",
+          "title": "Realistic / 3D [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n2hexeqlsh",
+          "title": "Young [IL / UPgrade]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n33s10mf9m",
+          "title": "Minecraft Skin [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Testing"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1n3smirhm83",
+          "title": "Drawing kid [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "cat-mn1nepl65kvxm",
+      "name": "Concept",
+      "status": "",
+      "x": 424,
+      "y": 210,
+      "color": "#16213e",
+      "ideas": [
+        {
+          "id": "idea-mn1neuz1gw4l1",
+          "title": "China meme [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [
+            "https://cdn.discordapp.com/attachments/1390664823020196004/1479058272018239610/1.jpg?ex=69c1115b&is=69bfbfdb&hm=134a5b8db1d87e94c59dc5eed8667aa7a4d193b1a4225e946c2654e7c8443cd1"
+          ],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mn1nfwr1j6k3r",
+          "title": "Cigarette love [IL]",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "no data"
+          ],
+          "images": [],
+          "links": [],
+          "refs": []
         }
       ]
     }
@@ -29,15 +218,5 @@
     "showMinimap": true,
     "gridDots": true
   },
-  "notes": [
-    {
-      "id": "note-mn1lisj3s482z",
-      "title": "Testing",
-      "content": "New note",
-      "color": "purple",
-      "x": 511,
-      "y": 190,
-      "width": 240
-    }
-  ]
+  "notes": []
 }
