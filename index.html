@@ -284,7 +284,7 @@ function buildCardCollage(images){
   if(!images||!images.length) return '';
   const imgs=images.slice(0,3);
   return `<div class="icollage icollage-${imgs.length}">
-    ${imgs.map(u=>`<img src="${esc(u)}" loading="lazy" onerror="this.parentElement.remove()">`).join('')}
+    ${imgs.map(u=>`<img src="${esc(resolveImg(u))}" loading="lazy" onerror="this.parentElement.remove()">`).join('')}
   </div>`;
 }
 
@@ -360,18 +360,18 @@ function buildModalCollage(images){
   const n=imgs.length;
   el.className='c'+n;
   if(n<=2){
-    imgs.forEach(u=>{const i=new Image();i.src=u;i.loading='lazy';i.onerror=()=>i.remove();el.appendChild(i);});
+    imgs.forEach(u=>{const i=new Image();i.src=resolveImg(u);i.loading='lazy';i.onerror=()=>i.remove();el.appendChild(i);});
   } else if(n===3){
     const [a,b,c]=imgs;
     const i=new Image();i.src=a;i.loading='lazy';i.onerror=()=>i.remove();el.appendChild(i);
     const stack=document.createElement('div');stack.className='col-stack';
-    [b,c].forEach(u=>{const i=new Image();i.src=u;i.loading='lazy';i.onerror=()=>i.remove();stack.appendChild(i);});
+    [b,c].forEach(u=>{const i=new Image();i.src=resolveImg(u);i.loading='lazy';i.onerror=()=>i.remove();stack.appendChild(i);});
     el.appendChild(stack);
   } else {
     const left=document.createElement('div');left.className='col-left';
     const right=document.createElement('div');right.className='col-right';
-    imgs.slice(0,2).forEach(u=>{const i=new Image();i.src=u;i.loading='lazy';i.onerror=()=>i.remove();left.appendChild(i);});
-    imgs.slice(2,4).forEach(u=>{const i=new Image();i.src=u;i.loading='lazy';i.onerror=()=>i.remove();right.appendChild(i);});
+    imgs.slice(0,2).forEach(u=>{const i=new Image();i.src=resolveImg(u);i.loading='lazy';i.onerror=()=>i.remove();left.appendChild(i);});
+    imgs.slice(2,4).forEach(u=>{const i=new Image();i.src=resolveImg(u);i.loading='lazy';i.onerror=()=>i.remove();right.appendChild(i);});
     el.appendChild(left);el.appendChild(right);
   }
 }
@@ -423,6 +423,22 @@ function drawMM(){
 }
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+// Resolve image URL: handle relative uploads/ paths for both localhost and GitHub Pages
+function resolveImg(url){
+  if(!url) return '';
+  // Already absolute URL (http/https) - use as-is
+  if(url.startsWith('http://') || url.startsWith('https://')) return url;
+  // Remove leading slash if any
+  const clean = url.replace(/^\//, '');
+  // On localhost the server serves /uploads/ directly
+  if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){
+    return '/'+clean;
+  }
+  // On GitHub Pages: prepend the repo base path
+  // e.g. /ideas-board/ so uploads/ becomes /ideas-board/uploads/
+  const base = location.pathname.split('/').slice(0,2).join('/');
+  return base+'/'+clean;
+}
 
 async function loadData(){
   const t=Date.now();
