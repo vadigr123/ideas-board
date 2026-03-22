@@ -26,6 +26,11 @@
               "label": "Original [Author / Telegram]",
               "url": "https://t.me/ai_poyo",
               "color": "blue"
+            },
+            {
+              "label": "Civitai [Old version]",
+              "url": "https://civitai.com/models/841226?modelVersionId=1610098",
+              "color": "blue"
             }
           ]
         },
@@ -125,7 +130,13 @@
             "https://pbs.twimg.com/media/HBGJ92jakAYezM8?format=jpg&name=4096x4096"
           ],
           "links": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "Original [Civitai]",
+              "url": "https://civitai.com/models/563588/fursuit-lora-or-furry-style",
+              "color": "blue"
+            }
+          ]
         },
         {
           "id": "idea-mn1mzojme8t71",
