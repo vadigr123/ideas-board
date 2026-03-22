@@ -425,17 +425,25 @@ function drawMM(){
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
 async function loadData(){
-  const local=location.hostname==='localhost'||location.hostname==='127.0.0.1';
-  const urls=local?['/data/ideas.json?t='+Date.now(),'data/ideas.json?t='+Date.now()]:['data/ideas.json?t='+Date.now()];
+  const t=Date.now();
+  // Try every possible location: subfolder and root, local server and relative
+  const urls=[
+    '/data/ideas.json?t='+t,   // local server with data/ subfolder
+    'data/ideas.json?t='+t,    // GitHub Pages with data/ subfolder
+    '/ideas.json?t='+t,        // local server flat structure
+    'ideas.json?t='+t,         // GitHub Pages flat structure
+  ];
   for(const url of urls){
     try{
-      const r=await fetch(url);if(!r.ok)continue;
-      const data=await r.json();S.data=data;render(data);
+      const r=await fetch(url);
+      if(!r.ok) continue;
+      const data=await r.json();
+      S.data=data;render(data);
       setTimeout(()=>{fitAll();document.getElementById('loading').classList.add('done');},900);
       return;
-    }catch{}
+    }catch(e){}
   }
-  document.getElementById('ltxt').innerHTML='Load error. Open via:<br><a href="http://localhost:3001/site" style="color:#e94560">localhost:3001/site</a>';
+  document.getElementById('ltxt').innerHTML='Could not load ideas.json<br><span style="font-size:11px;opacity:.6">Make sure ideas.json is in the repo root or data/ folder</span>';
 }
 loadData();
 </script>
