@@ -9,32 +9,6 @@
       "color": "#16213e",
       "ideas": [
         {
-          "id": "idea-mn1l80iyz0ym5",
-          "title": "Poyo [IL]",
-          "description": "",
-          "visibility": "public",
-          "tags": [
-            "Done",
-            "Testing"
-          ],
-          "images": [
-            "uploads/photo_2026-03-10_10-14-41 (3).jpg"
-          ],
-          "links": [],
-          "refs": [
-            {
-              "label": "Original [Author / Telegram]",
-              "url": "https://t.me/ai_poyo",
-              "color": "blue"
-            },
-            {
-              "label": "Civitai [Old version]",
-              "url": "https://civitai.com/models/841226?modelVersionId=1610098",
-              "color": "blue"
-            }
-          ]
-        },
-        {
           "id": "idea-mn1n4cw0hfz2o",
           "title": "Xiomi mascot [IL]",
           "description": "",
