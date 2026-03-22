@@ -1,50 +1,5 @@
 {
-  "categories": [
-    {
-      "id": "cat-mn1jfnsoxxi21",
-      "name": "New Category",
-      "status": "",
-      "x": 93,
-      "y": 188,
-      "color": "#16213e",
-      "ideas": [
-        {
-          "id": "idea-mn1jfv4ol0s5c",
-          "title": "Gay porno",
-          "description": "",
-          "visibility": "public",
-          "tags": [],
-          "images": [
-            "/uploads/1774170794818-xbs2q.png"
-          ],
-          "links": [
-            {
-              "label": "Discord server",
-              "url": "https://discord.gg/UtYvGwFfvx"
-            }
-          ]
-        },
-        {
-          "id": "idea-mn1kcq23mykp7",
-          "title": "mius poso",
-          "description": "",
-          "visibility": "draft",
-          "tags": [],
-          "images": [],
-          "links": []
-        }
-      ]
-    },
-    {
-      "id": "cat-mn1kcw45utmmm",
-      "name": "New Category",
-      "status": "",
-      "x": 550,
-      "y": 223,
-      "color": "#16213e",
-      "ideas": []
-    }
-  ],
+  "categories": [],
   "settings": {
     "title": "Ideas Board",
     "subtitle": "A space for creative thoughts",
