@@ -21,7 +21,13 @@
             "uploads/photo_2026-03-10_10-14-41 (3).jpg"
           ],
           "links": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "Original [Author / Telegram]",
+              "url": "https://t.me/ai_poyo",
+              "color": "blue"
+            }
+          ]
         },
         {
           "id": "idea-mn1n4cw0hfz2o",
@@ -76,9 +82,23 @@
           "tags": [
             "no data"
           ],
-          "images": [],
+          "images": [
+            "uploads/photo_2026-02-25_11-17-29.jpg",
+            "uploads/photo_2026-01-22_22-40-32.jpg"
+          ],
           "links": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "Civitai [Original / old version]",
+              "url": "https://civitai.com/models/2052031/dalmatian-biliy-and-bilij-fursona-commision",
+              "color": "blue"
+            },
+            {
+              "label": "Original [Author / Telegram]",
+              "url": "https://t.me/white_nsfw",
+              "color": "gray"
+            }
+          ]
         }
       ]
     },
