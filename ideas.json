@@ -126,9 +126,26 @@
           "tags": [
             "no data"
           ],
-          "images": [],
+          "images": [
+            "https://pbs.twimg.com/media/HC-D6o2bMAAPb_9?format=jpg&name=large",
+            "https://pbs.twimg.com/media/HBxnFNWbUAAaT6x?format=jpg&name=large",
+            "https://pbs.twimg.com/media/HB2w3m7awAA8Tf0?format=jpg&name=large",
+            "https://pbs.twimg.com/media/HCppUVlbQAAVGaq?format=jpg&name=large",
+            "https://pbs.twimg.com/media/HCppYK3bgAAvE-d?format=jpg&name=large"
+          ],
           "links": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "Original [Author / Twitter (X)]",
+              "url": "https://x.com/HklMilkybot",
+              "color": "red"
+            },
+            {
+              "label": "Original [Author / bsky]",
+              "url": "https://bsky.app/profile/milkybot.bsky.social",
+              "color": "blue"
+            }
+          ]
         },
         {
           "id": "idea-mn1n1au75nu3u",
@@ -172,15 +189,23 @@
         },
         {
           "id": "idea-mn1n3smirhm83",
-          "title": "Drawing kid [IL]",
+          "title": "Child Drawing [IL]",
           "description": "",
           "visibility": "public",
           "tags": [
             "no data"
           ],
-          "images": [],
+          "images": [
+            "https://image-b2.civitai.com/file/civitai-media-cache/ba231d55-75e9-486c-af16-c541caffc5f2/original"
+          ],
           "links": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "Civitai Ref",
+              "url": "https://civitai.com/models/405372/child-drawing",
+              "color": "yellow"
+            }
+          ]
         }
       ]
     },
