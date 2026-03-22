@@ -23,8 +23,26 @@
               "url": "https://discord.gg/UtYvGwFfvx"
             }
           ]
+        },
+        {
+          "id": "idea-mn1kcq23mykp7",
+          "title": "mius poso",
+          "description": "",
+          "visibility": "draft",
+          "tags": [],
+          "images": [],
+          "links": []
         }
       ]
+    },
+    {
+      "id": "cat-mn1kcw45utmmm",
+      "name": "New Category",
+      "status": "",
+      "x": 361,
+      "y": 322,
+      "color": "#16213e",
+      "ideas": []
     }
   ],
   "settings": {
