@@ -218,5 +218,24 @@
     "showMinimap": true,
     "gridDots": true
   },
-  "notes": []
+  "notes": [
+    {
+      "id": "note-mn1nrhatke18r",
+      "title": "Checkpoint",
+      "content": "Try to learn how to create your own Checkpoint",
+      "color": "pink",
+      "x": 189,
+      "y": 214,
+      "width": 240
+    },
+    {
+      "id": "note-mn1ns8jq3a6ah",
+      "title": "",
+      "content": "I'm too lazy for everything.",
+      "color": "yellow",
+      "x": 1105,
+      "y": 255,
+      "width": 240
+    }
+  ]
 }
