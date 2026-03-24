@@ -232,8 +232,8 @@
       "id": "cat-mn1nepl65kvxm",
       "name": "Concept",
       "status": "",
-      "x": 740,
-      "y": 100,
+      "x": 977,
+      "y": 99,
       "color": "#16213e",
       "ideas": [
         {
@@ -385,8 +385,8 @@
       "title": "",
       "content": "I'm too lazy for everything.",
       "color": "yellow",
-      "x": 360,
-      "y": 1337,
+      "x": 490,
+      "y": -68,
       "width": 240
     }
   ]
