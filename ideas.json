@@ -4,8 +4,8 @@
       "id": "cat-mn1l7w72c8909",
       "name": "Character",
       "status": "",
-      "x": 628,
-      "y": 328,
+      "x": 100,
+      "y": 100,
       "color": "#16213e",
       "ideas": [
         {
@@ -85,8 +85,8 @@
       "id": "cat-mn1mykw9uiw4a",
       "name": "Style",
       "status": "",
-      "x": 207,
-      "y": 333,
+      "x": 480,
+      "y": 100,
       "color": "#16213e",
       "ideas": [
         {
@@ -232,8 +232,8 @@
       "id": "cat-mn1nepl65kvxm",
       "name": "Concept",
       "status": "",
-      "x": 1058,
-      "y": 335,
+      "x": 740,
+      "y": 100,
       "color": "#16213e",
       "ideas": [
         {
@@ -376,8 +376,8 @@
       "title": "Checkpoint",
       "content": "Try to learn how to create your own Checkpoint",
       "color": "pink",
-      "x": 189,
-      "y": 214,
+      "x": 100,
+      "y": 1337,
       "width": 240
     },
     {
@@ -385,8 +385,8 @@
       "title": "",
       "content": "I'm too lazy for everything.",
       "color": "yellow",
-      "x": 1105,
-      "y": 255,
+      "x": 360,
+      "y": 1337,
       "width": 240
     }
   ]
