@@ -376,8 +376,8 @@
       "title": "Checkpoint",
       "content": "Try to learn how to create your own Checkpoint",
       "color": "pink",
-      "x": 100,
-      "y": 1337,
+      "x": 117,
+      "y": 800,
       "width": 240
     },
     {
@@ -385,8 +385,8 @@
       "title": "",
       "content": "I'm too lazy for everything.",
       "color": "yellow",
-      "x": 490,
-      "y": -68,
+      "x": 488,
+      "y": -6,
       "width": 240
     }
   ]
