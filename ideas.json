@@ -39,21 +39,6 @@
           "refs": []
         },
         {
-          "id": "idea-mn1n5ldev40c0",
-          "title": "Roblox Duo [IL]",
-          "description": "",
-          "visibility": "public",
-          "tags": [
-            "Done",
-            "Testing"
-          ],
-          "images": [
-            "uploads/photo_2026-03-22_12-36-16.jpg"
-          ],
-          "links": [],
-          "refs": []
-        },
-        {
           "id": "idea-mn1n66laggu3u",
           "title": "White Dalmatian [IL / Upgrade]",
           "description": "",
@@ -356,6 +341,62 @@
           ],
           "images": [
             "https://pbs.twimg.com/media/HBVceolbcAEKzpZ?format=png&name=900x900"
+          ],
+          "links": [],
+          "refs": []
+        },
+        {
+          "id": "idea-mndo7x0jq7l7x",
+          "title": "Fish time",
+          "description": "",
+          "visibility": "public",
+          "tags": [
+            "Concept"
+          ],
+          "images": [
+            "https://i.pinimg.com/736x/ef/db/f6/efdbf622d3570af71fc5cd5eac55fddd.jpg"
+          ],
+          "links": [],
+          "refs": [
+            {
+              "label": "Pinterest",
+              "url": "https://cz.pinterest.com/pin/849139704785231552/",
+              "color": "red"
+            }
+          ]
+        },
+        {
+          "id": "idea-mndob0k2cv0zg",
+          "title": "The White Rabbit pointing at clock | White Rabbit",
+          "description": "",
+          "visibility": "draft",
+          "tags": [
+            "Concept"
+          ],
+          "images": [
+            "https://i.pinimg.com/736x/56/ec/71/56ec71d73b1a5db5a0cd235a28ef8dcd.jpg"
+          ],
+          "links": [],
+          "refs": [
+            {
+              "label": "CivitAI",
+              "url": "https://civitai.com/models/2149131/the-white-rabbit-pointing-at-clock-or-white-rabbit-illustriousnoobai-by-mlaofmd",
+              "color": "blue"
+            }
+          ]
+        },
+        {
+          "id": "idea-mndogifvn10t9",
+          "title": "Furry sad wolf",
+          "description": "",
+          "visibility": "private",
+          "tags": [],
+          "images": [
+            "https://i.pinimg.com/736x/33/2d/de/332dde2b2924f7fbb6edbda49f24749a.jpg",
+            "https://i.pinimg.com/736x/2b/90/e5/2b90e59374c55328af4b13427e0241bd.jpg",
+            "https://i.pinimg.com/736x/87/8b/d2/878bd2de81f85f2e8cc443f0dd376560.jpg",
+            "https://i.pinimg.com/736x/01/2e/e2/012ee21db9dd3684bb0b7277f536e953.jpg",
+            "https://i.pinimg.com/1200x/f6/c3/a9/f6c3a98d6057b491d590831863e2477f.jpg"
           ],
           "links": [],
           "refs": []
